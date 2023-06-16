@@ -28,7 +28,21 @@ impl fmt::Display for Point2D {
     }
 }
 
+// TODO Exercise
+#[derive(Debug)]
+struct Complex {
+    real: i32,
+    imag: i32,
+}
+
+impl fmt::Display for Complex {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{} + {}", self.real, self.imag)
+    }
+}
+
 fn main() {
+    /* 
     let minmax = MinMax(0, 14);
 
     println!("Compare structures:");
@@ -47,6 +61,12 @@ fn main() {
     println!("Compare points:");
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
+
+    */
+
+    let complex = Complex{ real: 3, imag: 2};
+    println!("Display: {}", complex);
+    println!("Debug: {:?}", complex);
 
     // Error. Both `Debug` and `Display` were implemented, but `{:b}`
     // requires `fmt::Binary` to be implemented. This will not work.
